@@ -1,0 +1,10 @@
+CREATE TABLE book (
+	id BIGSERIAL PRIMARY KEY NOT NULL,
+	author VARCHAR NOT NULL,
+	isbn VARCHAR UNIQUE NOT NULL,
+	price FLOAT8 NOT NULL,
+	title VARCHAR NOT NULL,
+	created_date TIMESTAMP NOT NULL,
+	last_modified_date TIMESTAMP NOT NULL,
+	version int NOT NULL
+);
