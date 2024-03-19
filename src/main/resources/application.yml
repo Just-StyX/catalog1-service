@@ -1,6 +1,31 @@
 spring:
       application:
               name: catalog1-service
+      config:
+          import: "optional:configserver:" # for server config
+      cloud:
+          config:
+              uri: http://localhost:8888 # for server config
+              request-connect-timeout: 5000 # for server config
+              request-read-timeout: 5000 # for server config
+              fail-fast: true # for server config
+              retry: # for server config
+                  max-attempt: 6 # for server config
+                  initial-interval: 1000 # for server config
+                  max-interval: 2000 # for server config
+                  multiplier: 1.1 # for server config
+      datasource:
+          username: jay7
+          password: podsam777
+          url: jdbc:postgresql://localhost:5432/test
+          hikari:
+              connection-timeout: 2000
+              maximum-pool-size: 5
+      flyway:
+          baselineOnMigrate: true
+#      sql:
+#        init:
+#            mode: always
 
 server:
     port: 9001
@@ -10,3 +35,15 @@ server:
           threads:
                   max: 50
                   min-spare: 5
+
+polar:
+    greeting: You are welcome to the local catalog book store!
+    testData:
+        enabled: true
+# below are config stuff
+management:
+    endpoints:
+      web:
+        exposure:
+            include: refresh
+
