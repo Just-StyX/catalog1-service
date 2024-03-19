@@ -35,6 +35,6 @@ public class BookJsonTests {
                         "price": 9.90
                     }
                 """;
-        assertThat(json.parse(content)).usingRecursiveComparison().isEqualTo(Book.of("1234567890", "Title", "Author", 9.90));
+        assertThat(json.parse(content)).usingRecursiveComparison().isEqualTo(Book.of("1234567890", "Title", "Author", 9.90, "Princeton"));
     }
 }
