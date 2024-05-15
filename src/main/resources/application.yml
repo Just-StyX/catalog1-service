@@ -15,8 +15,8 @@ spring:
                   max-interval: 2000 # for server config
                   multiplier: 1.1 # for server config
       datasource:
-          username: jay7
-          password: podsam777
+          username: 
+          password: 
           url: jdbc:postgresql://localhost:5432/test
           hikari:
               connection-timeout: 2000
